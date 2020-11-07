@@ -57,5 +57,63 @@ namespace XMLConverter
                 //Console.WriteLine(node.SelectSingleNode(property).Value);
             }
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void Search() 
+        {
+            ResultRichTextBox.Text = "";
+            ProgLanguage searchParams = new ProgLanguage();
+            try 
+            {
+
+                if (LanguageNameCheckBox.Checked && LanguageNameComboBox.SelectedItem != null)
+                    searchParams.LanguageName = LanguageNameComboBox.SelectedItem.ToString();
+
+                if (AuthorsCheckBox.Checked && AuthorsComboBox.SelectedItem != null)
+                    searchParams.Authors = AuthorsComboBox.SelectedItem.ToString();
+
+                if (ReleaseYearCheckBox.Checked && ReleaseYearComboBox.SelectedItem != null)
+                    searchParams.ReleaseYear = ReleaseYearComboBox.SelectedItem.ToString();
+
+                if (AbstractionLevelCheckBox.Checked && AbstractionLevelComboBox.SelectedItem != null)
+                    searchParams.AbstractionLevel = AbstractionLevelComboBox.SelectedItem.ToString();
+
+                if (CommonUsageCheckBox.Checked && CommonUsageComboBox.SelectedItem != null)
+                    searchParams.CommonlyUsedFor = CommonUsageComboBox.SelectedItem.ToString();
+
+                if (LanguageTypeCheckBox.Checked && LanguageTypeComboBox.SelectedItem != null)
+                    searchParams.TypeOfLanguage = LanguageTypeComboBox.SelectedItem.ToString();
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine("Whoops! You gotta choose something before you go.");
+            }
+
+            IStrategyParser parserStrategy = new DOMXMLStrategy();
+
+            if (XMLDOMRadioButton.Checked)
+                parserStrategy = new DOMXMLStrategy();
+            if (LINQRadioButton.Checked)
+                parserStrategy = null;
+            if (SAXRadioButton.Checked)
+                parserStrategy = null;
+
+            List<ProgLanguage> result = parserStrategy.Parse(searchParams);
+            Console.WriteLine(result.Count);
+            foreach (ProgLanguage language in result) 
+            {
+                ResultRichTextBox.Text += "Language name: " + language.LanguageName + "\n";
+                ResultRichTextBox.Text += "Language type: " + language.TypeOfLanguage + "\n";
+                ResultRichTextBox.Text += "Authors :" + language.Authors + "\n";
+                ResultRichTextBox.Text += "Abstraction level: " + language.AbstractionLevel + "\n";
+                ResultRichTextBox.Text += "Release year: " + language.ReleaseYear + "\n";
+                ResultRichTextBox.Text += "Common usage: " + language.CommonlyUsedFor + "\n";
+                ResultRichTextBox.Text += "\n" + "__________________________________" + "\n" + "\n";
+             }
+        }
     }
 }

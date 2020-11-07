@@ -15,5 +15,21 @@ namespace XMLConverter
         public string TypeOfLanguage { get; set; } = "";
         public string AbstractionLevel { get; set; } = "";
         public string CommonlyUsedFor { get; set; } = "";
+
+        public bool HasSomeFieldsEmpty()
+        {
+            if (
+                   LanguageName == ""
+                || ReleaseYear == ""
+                || Authors == ""
+                || TypeOfLanguage == ""
+                || AbstractionLevel == ""
+                || CommonlyUsedFor == ""
+               )
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
