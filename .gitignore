@@ -4,3 +4,5 @@ XMLConverter/bin/*
 XMLConverter/obj/*
 .vs/
 XMLConverter/Properties/*
+XMLConverter/Form1.resx
+XMLConverter/App.config

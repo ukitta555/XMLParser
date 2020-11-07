@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProgLanguages>
+	<ProgLangugage>
+		<LanguageName>C++</LanguageName>
+		<ReleaseYear>1985</ReleaseYear>
+		<Authors>Bjarne Stroustrup</Authors>
+		<TypeOfLanguage>Compiled</TypeOfLanguage>
+		<AbstractionLevel>Low</AbstractionLevel>
+		<CommonlyUsedFor>Backend and desktop</CommonlyUsedFor>
+	</ProgLangugage>
+	<ProgLangugage>
+		<LanguageName>Java</LanguageName>
+		<ReleaseYear>1991</ReleaseYear>
+		<Authors>James Gosling, Mike Sheridan, and Patrick Naughton</Authors>
+		<TypeOfLanguage>Compiled and interpreted</TypeOfLanguage>
+		<AbstractionLevel>Medium</AbstractionLevel>
+		<CommonlyUsedFor>Backend and desktop</CommonlyUsedFor>
+	</ProgLangugage>
+	<ProgLangugage>
+		<LanguageName>C#</LanguageName>
+		<ReleaseYear>2000</ReleaseYear>
+		<Authors>Anders Hejlsberg and Microsoft team</Authors>
+		<TypeOfLanguage>Compiled and interpreted</TypeOfLanguage>
+		<AbstractionLevel>Medium</AbstractionLevel>
+		<CommonlyUsedFor>Backend and desktop</CommonlyUsedFor>
+	</ProgLangugage>
+	<ProgLangugage>
+		<LanguageName>JS</LanguageName>
+		<ReleaseYear>2000</ReleaseYear>
+		<Authors>Brendan Eich and NetScape team</Authors>
+		<TypeOfLanguage>Interpreted</TypeOfLanguage>
+		<AbstractionLevel>High</AbstractionLevel>
+		<CommonlyUsedFor>Frontend</CommonlyUsedFor>
+	</ProgLangugage>
+	<ProgLangugage>
+		<LanguageName>Python</LanguageName>
+		<ReleaseYear>1991</ReleaseYear>
+		<Authors>Guido van Rossum</Authors>
+		<TypeOfLanguage>Interpreted</TypeOfLanguage>
+		<AbstractionLevel>High</AbstractionLevel>
+		<CommonlyUsedFor>Backend and scientific research</CommonlyUsedFor>
+	</ProgLangugage>
+</ProgLanguages>
