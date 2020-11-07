@@ -1,6 +1,6 @@
 ﻿namespace XMLConverter
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -231,7 +231,7 @@
             this.HTMLButton.Text = "To HTML";
             this.HTMLButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,9 +255,9 @@
             this.Controls.Add(this.ReleaseYearCheckBox);
             this.Controls.Add(this.AuthorsCheckBox);
             this.Controls.Add(this.LanguageNameCheckBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Form";
+            this.Text = "XML Parser";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
