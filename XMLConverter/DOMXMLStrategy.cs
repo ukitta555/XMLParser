@@ -29,16 +29,17 @@ namespace XMLConverter
                         languageObj.Authors = attribute.Value;
                         Console.WriteLine("Added authors");
                     }
-                    if (attribute.Name == "ReleaseYear" && (searchParams.ReleaseYear == attribute.Value || searchParams.ReleaseYear == ""))
-                    {
-                        languageObj.ReleaseYear = attribute.Value;
-                        Console.WriteLine("Added release year");
-                    }
                     if (attribute.Name == "LanguageName" && (searchParams.LanguageName == attribute.Value || searchParams.LanguageName == ""))
                     {
                         languageObj.LanguageName = attribute.Value;
                         Console.WriteLine("Added name");
                     }
+                    if (attribute.Name == "ReleaseYear" && (searchParams.ReleaseYear == attribute.Value || searchParams.ReleaseYear == ""))
+                    {
+                        languageObj.ReleaseYear = attribute.Value;
+                        Console.WriteLine("Added release year");
+                    }
+                    
                     if (attribute.Name == "TypeOfLanguage" && (searchParams.TypeOfLanguage == attribute.Value || searchParams.TypeOfLanguage == ""))
                     {
                         languageObj.TypeOfLanguage = attribute.Value;

@@ -222,15 +222,17 @@
             this.ClearButton.TabIndex = 17;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // HTMLButton
             // 
             this.HTMLButton.Location = new System.Drawing.Point(278, 367);
             this.HTMLButton.Name = "HTMLButton";
-            this.HTMLButton.Size = new System.Drawing.Size(75, 23);
+            this.HTMLButton.Size = new System.Drawing.Size(108, 23);
             this.HTMLButton.TabIndex = 18;
             this.HTMLButton.Text = "To HTML";
             this.HTMLButton.UseVisualStyleBackColor = true;
+            this.HTMLButton.Click += new System.EventHandler(this.HTMLButton_Click);
             // 
             // Form
             // 

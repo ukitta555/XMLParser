@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Xsl;
 
 namespace XMLConverter
 {
@@ -98,9 +100,9 @@ namespace XMLConverter
             if (XMLDOMRadioButton.Checked)
                 parserStrategy = new DOMXMLStrategy();
             if (LINQRadioButton.Checked)
-                parserStrategy = null;
+                parserStrategy = new XMLtoLINQStrategy();
             if (SAXRadioButton.Checked)
-                parserStrategy = null;
+                parserStrategy = new SAXStrategy();
 
             List<ProgLanguage> result = parserStrategy.Parse(searchParams);
             Console.WriteLine(result.Count);
@@ -114,6 +116,25 @@ namespace XMLConverter
                 ResultRichTextBox.Text += "Common usage: " + language.CommonlyUsedFor + "\n";
                 ResultRichTextBox.Text += "\n" + "__________________________________" + "\n" + "\n";
              }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ResultRichTextBox.Clear();
+        }
+
+        private void HTMLButton_Click(object sender, EventArgs e)
+        {
+            Transform();
+        }
+        private void Transform() 
+        {
+            XslCompiledTransform xct = new XslCompiledTransform();
+            xct.Load(@"C:\Users\Vlad_2\repos\C#\XMLConverter\XMLConverter\XSLtoHTML.xsl");
+            string fileXML = @"C:\Users\Vlad_2\repos\C#\XMLConverter\XMLConverter\ProgLanguages.xml";
+            string fileHTML = @"C:\Users\Vlad_2\repos\C#\XMLConverter\XMLConverter\ProgLanguages.html";
+            xct.Transform(fileXML, fileHTML);
+            MessageBox.Show("Transformed your file :)");
         }
     }
 }

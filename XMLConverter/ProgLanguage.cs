@@ -9,6 +9,18 @@ namespace XMLConverter
     class ProgLanguage
     {
 
+        public ProgLanguage() 
+        {
+        }
+        public ProgLanguage(string languageName, string releaseYear, string authors, string typeOfLang, string abstractionLevel, string commonlyUsed) 
+        {
+            LanguageName = languageName;
+            ReleaseYear = releaseYear;
+            Authors = authors;
+            TypeOfLanguage = typeOfLang;
+            AbstractionLevel = abstractionLevel;
+            CommonlyUsedFor = commonlyUsed;
+        }
         public string LanguageName { get; set; } = "";
         public string ReleaseYear { get; set; } = "";
         public string Authors { get; set; } = "";
